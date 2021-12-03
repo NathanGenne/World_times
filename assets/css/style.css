@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;700&display=swap');
+
+/* font-family: 'Lato', sans-serif; */
+/* font-family: 'Questrial', sans-serif; */
+/* font-family: 'Roboto', sans-serif; */
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 3.5vw;
+    background-color: rgba(255, 255, 255, 0.623);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.clock {
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.4) inset;
+    border-radius: 15px;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 95vw;
+    height: 45vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2vw;
+    transition: ease all .5s;
+}
+
+.city {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.time, .date {
+    font-size: 2.5vw;
+    width: 42%;
+    background: linear-gradient(90deg, rgba(0, 133, 133, 0.4) 0%, rgba(0, 44, 119, 0.4) 100%);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.paris         { background-image: url("../img/paris.jpg"); }
+.london        { background-image: url("../img/london.jpg"); }
+.new-york      { background-image: url("../img/new-york.jpg"); }
+.tokyo         { background-image: url("../img/tokyo.jpg"); }
+.rio           { background-image: url("../img/rio.jpg"); }
+.san-francisco { background-image: url("../img/san-francisco.jpg"); }
+
+
+/* Adaptation à la taille de l'écran */
+@media only screen and (max-width: 700px) {
+    body {
+        font-size: 3rem;
+    }
+    .grid {
+        width: 95vw;
+        height: 100vw;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        gap: 2vw;
+    }
+    .clock { border-radius: 10px; }
+    .time, .date {
+        font-size: 5vw;
+    }
+    .date {
+        margin-bottom: 5px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .time, .date {
+        font-size: 1.5rem;
+    }
+}
